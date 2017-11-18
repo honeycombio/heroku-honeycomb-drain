@@ -1,0 +1,55 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "16v3KZ/bE7zLuq8cDMX7nAoKaqY=",
+			"path": "github.com/bmizerany/lpx",
+			"revision": "af85cf24c1567bcb5a2e4c21597cc049eab31f55",
+			"revisionTime": "2013-04-29T05:58:04Z"
+		},
+		{
+			"checksumSHA1": "imR2wF388/0fBU6RRWx8RvTi8Q8=",
+			"path": "github.com/facebookgo/clock",
+			"revision": "600d898af40aa09a7a93ecb9265d87b0504b6f03",
+			"revisionTime": "2015-04-10T01:09:13Z"
+		},
+		{
+			"checksumSHA1": "/jfkiemtHBkQcesTAtOso945hTY=",
+			"path": "github.com/facebookgo/limitgroup",
+			"revision": "6abd8d71ec01451d7f1929eacaa263bbe2935d05",
+			"revisionTime": "2015-06-12T19:09:41Z"
+		},
+		{
+			"checksumSHA1": "6viCX3VLBaomwZukWCTmipmQWO8=",
+			"path": "github.com/facebookgo/muster",
+			"revision": "fd3d7953fd52354a74b9f6b3d70d0c9650c4ec2a",
+			"revisionTime": "2015-07-08T23:28:44Z"
+		},
+		{
+			"checksumSHA1": "KxX/Drph+byPXBFIXaCZaCOAnrU=",
+			"path": "github.com/go-logfmt/logfmt",
+			"revision": "390ab7935ee28ec6b286364bba9b4dd6410cb3d5",
+			"revisionTime": "2016-11-15T14:25:13Z"
+		},
+		{
+			"checksumSHA1": "PNMXpd8F+2Wy6IWCVj6oavI0uQE=",
+			"path": "github.com/honeycombio/libhoney-go",
+			"revision": "1782b3ea9b57603d943377079c2c7151049b1448",
+			"revisionTime": "2017-11-15T01:39:47Z"
+		},
+		{
+			"checksumSHA1": "abKzFXAn0KDr5U+JON1ZgJ2lUtU=",
+			"path": "github.com/kr/logfmt",
+			"revision": "b84e30acd515aadc4b783ad4ff83aff3299bdfe0",
+			"revisionTime": "2014-02-26T03:06:59Z"
+		},
+		{
+			"checksumSHA1": "o5Skl9YjZqmvEEqWie3f3oY0Kow=",
+			"path": "gopkg.in/alexcesaro/statsd.v2",
+			"revision": "7fea3f0d2fab1ad973e641e51dba45443a311a90",
+			"revisionTime": "2016-03-20T18:21:10Z"
+		}
+	],
+	"rootPath": "github.com/dreid/heroku-honeycomb-drain"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Honeycomb.io Log Drain",
+  "description": "Honeycomb.io Log Drain",
+  "keywords": [
+    "logdrain",
+    "go",
+    "honeycomb"
+  ],
+  "website": "https://github.com/dreid/heroku-honeycomb-drain",
+  "repository": "https://github.com/dreid/heroku-honeycomb-drain",
+  "env": {
+    "HONEYCOMB_WRITE_KEY": {
+      "description": "Honeycomb Write Key",
+      "required": true
+    },
+    "HONEYCOMB_DATASET": {
+      "description": "Honeycomb Data Set Name",
+      "value": "heroku-logdrain"
+    },
+    "ALLOWED_APPS": {
+      "required": true
+    },
+    "APP_FORMATS": {
+      "required": true,
+      "value": "heroku/*:logfmt,app/*:raw"
+    },
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/go"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  }
+}

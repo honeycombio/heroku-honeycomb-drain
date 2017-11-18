@@ -23,7 +23,7 @@
     "APP_FORMATS": {
       "required": true,
       "value": "heroku/*:logfmt,app/*:raw"
-    },
+    }
   },
   "buildpacks": [
     {

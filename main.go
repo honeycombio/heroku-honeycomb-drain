@@ -9,6 +9,7 @@ import (
 	"time"
 	"bufio"
 	"strings"
+	"strconv"
 	"encoding/json"
 	"github.com/go-logfmt/logfmt"
 	"github.com/bmizerany/lpx"
@@ -29,9 +30,6 @@ var formatterMap = map[string]ToEvent{
 	"raw": RawToEvent,
 	"ignore": IgnoreToEvent,
 }
-// heroku/router:logfmt
-// heroku/*:logfmt
-// foo/web:json
 
 func JsonToEvent(message []byte, event *libhoney.Event) bool {
 	var j map[string]interface{}
@@ -49,11 +47,42 @@ func JsonToEvent(message []byte, event *libhoney.Event) bool {
 	return true
 }
 
+func coerceLogFmtValue(value string) interface{} {
+	var outValue interface{}
+
+	outValue, err := time.ParseDuration(value)
+	if err == nil {
+		return outValue
+	}
+
+	outValue, err = strconv.ParseInt(value, 10, 64)
+	if err == nil {
+		return outValue
+	}
+	
+	outValue, err = strconv.ParseFloat(value, 64)
+	if err == nil {
+		return outValue
+	}
+	
+	outValue, err = strconv.ParseUint(value, 10, 64)
+	if err == nil {
+		return outValue
+	}
+	
+	outValue, err = strconv.ParseBool(value)
+	if err == nil {
+		return outValue
+	}
+	
+	return value
+}
+
 func LogFmtToEvent(message []byte, event *libhoney.Event) bool {
 	d := logfmt.NewDecoder(bytes.NewBuffer(message)) 
 	for d.ScanRecord() {
 		for d.ScanKeyval() {
-			event.AddField(string(d.Key()), string(d.Value())) 
+			event.AddField(string(d.Key()), coerceLogFmtValue(string(d.Value())))
 		}
 		
 		if d.Err() != nil {

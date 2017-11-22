@@ -130,7 +130,6 @@ func (ld *LogDrain) Handle(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 	
-	
 	builder := libhoney.NewBuilder() 
 
 	lp := lpx.NewReader(bufio.NewReader(req.Body)) 

@@ -5,15 +5,16 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/bmizerany/lpx"
-	"github.com/go-logfmt/logfmt"
-	"github.com/honeycombio/libhoney-go"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/bmizerany/lpx"
+	"github.com/go-logfmt/logfmt"
+	"github.com/honeycombio/libhoney-go"
 )
 
 type LogDrain struct {
@@ -82,7 +83,11 @@ func LogFmtToEvent(message []byte, event *libhoney.Event) bool {
 	d := logfmt.NewDecoder(bytes.NewBuffer(message))
 	for d.ScanRecord() {
 		for d.ScanKeyval() {
-			event.AddField(string(d.Key()), coerceLogFmtValue(string(d.Value())))
+			if d.Value() != nil {
+				event.AddField(string(d.Key()), coerceLogFmtValue(string(d.Value())))
+			} else {
+				event.AddField("raw_message", string(message))
+			}
 		}
 
 		if d.Err() != nil {

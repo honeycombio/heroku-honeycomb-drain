@@ -165,9 +165,20 @@ func (b *batchAgg) fireBatch(events []*Event) {
 		return
 	}
 	// get some attributes common to this entire batch up front
-	apiHost := events[0].APIHost
-	writeKey := events[0].WriteKey
-	dataset := events[0].Dataset
+	var event *Event
+	for _, ev := range events {
+		if ev != nil {
+			event = ev
+		}
+	}
+	if event == nil {
+		// all events in the batch were nil
+		return
+	}
+
+	apiHost := event.APIHost
+	writeKey := event.WriteKey
+	dataset := event.Dataset
 
 	// sigh. dislike
 	userAgent := fmt.Sprintf("libhoney-go/%s", version)

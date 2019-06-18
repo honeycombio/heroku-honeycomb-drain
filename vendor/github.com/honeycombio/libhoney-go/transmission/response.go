@@ -1,4 +1,4 @@
-package libhoney
+package transmission
 
 import (
 	"encoding/json"
@@ -48,4 +48,20 @@ func (r *Response) UnmarshalJSON(b []byte) error {
 		r.Err = errors.New(aux.Error)
 	}
 	return nil
+}
+
+// writeToResponse adds the response to the response queue. Returns true if it
+// dropped the response because it's set to not block on the queue being full
+// and the queue was full.
+func writeToResponse(responses chan Response, resp Response, block bool) (dropped bool) {
+	if block {
+		responses <- resp
+	} else {
+		select {
+		case responses <- resp:
+		default:
+			return true
+		}
+	}
+	return false
 }

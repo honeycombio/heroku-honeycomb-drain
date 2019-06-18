@@ -33,10 +33,16 @@
 			"revisionTime": "2016-11-15T14:25:13Z"
 		},
 		{
-			"checksumSHA1": "PNMXpd8F+2Wy6IWCVj6oavI0uQE=",
+			"checksumSHA1": "jp61uaxzJfRCK6yDWfY/Z9o/6sc=",
 			"path": "github.com/honeycombio/libhoney-go",
-			"revision": "1782b3ea9b57603d943377079c2c7151049b1448",
-			"revisionTime": "2017-11-15T01:39:47Z"
+			"revision": "fe32f946307af3cb659f9c7d36875eb799788aa6",
+			"revisionTime": "2019-05-08T22:56:28Z"
+		},
+		{
+			"checksumSHA1": "NLfUD3w8km/ckfEc10aKvUNvtaI=",
+			"path": "github.com/honeycombio/libhoney-go/transmission",
+			"revision": "fe32f946307af3cb659f9c7d36875eb799788aa6",
+			"revisionTime": "2019-05-08T22:56:28Z"
 		},
 		{
 			"checksumSHA1": "abKzFXAn0KDr5U+JON1ZgJ2lUtU=",
@@ -51,5 +57,5 @@
 			"revisionTime": "2016-03-20T18:21:10Z"
 		}
 	],
-	"rootPath": "github.com/dreid/heroku-honeycomb-drain"
+	"rootPath": "heroku-honeycomb-drain"
 }

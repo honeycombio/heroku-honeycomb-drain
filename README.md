@@ -1,5 +1,7 @@
 # heroku-honeycomb-drain
 
+[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/heroku-honeycomb-drain)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
+
 This is a [log drain](https://devcenter.heroku.com/articles/log-drains) that can be added to any app running on Heroku to start observing that app's behaviour using [Honeycomb](https://honeycomb.io/).
 
 It can send HTTP request events from the Heroku router, along with other events emitted from the Heroku platform. With some configuration it can also parse and send structured logs emitted by app code.

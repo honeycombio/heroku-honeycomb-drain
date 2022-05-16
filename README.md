@@ -1,8 +1,12 @@
 # heroku-honeycomb-drain
 
-[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/heroku-honeycomb-drain?color=pink)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
+[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/heroku-honeycomb-drain)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
 
-**STATUS: this project is being sunset.** [See https://github.com/honeycombio/heroku-honeycomb-drain/issues/10](https://github.com/honeycombio/heroku-honeycomb-drain/issues/10)
+**STATUS: this project is [archived](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md).** You can replace usage of this drain with the [syslog drain](https://devcenter.heroku.com/articles/log-drains#syslog-drains) and send to an OpenTelemetry Collector using the [syslog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/syslogreceiver).
+
+Questions? You can chat with us in the **Honeycomb Pollinators** Slack. You can find a direct link to request an invite in [Spread the Love: Appreciating Our Pollinators Community](https://www.honeycomb.io/blog/spread-the-love-appreciating-our-pollinators-community/).
+
+---
 
 This is a [log drain](https://devcenter.heroku.com/articles/log-drains) that can be added to any app running on Heroku to start observing that app's behaviour using [Honeycomb](https://honeycomb.io/).
 
